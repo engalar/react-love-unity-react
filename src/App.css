@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+/* layout */
+.ant-layout .ant-layout-sider {
+  background: unset;
+}
+.ant-layout .ant-layout-header {
+  background: unset;
+}
