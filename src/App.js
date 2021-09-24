@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useState, useEffect } from "react";
 import Unity, { UnityContext } from "react-unity-webgl";
-import { Checkbox, Layout, List } from 'antd';
+import { Button, Checkbox, Divider, Layout, List } from 'antd';
 
 import 'antd/dist/antd.css';
 
@@ -35,7 +35,7 @@ function App() {
   return (
     <div>
       <Layout>
-        <Header>Header</Header>
+        <Header>IOT demo</Header>
         <Layout>
           <Content>
             <Unity style={{ height: 600, width: 600 }} unityContext={unityContext} />
@@ -49,11 +49,18 @@ function App() {
               <List.Item><Checkbox value="pipe4" onChange={spawnEnemies}></Checkbox></List.Item>
               <List.Item><Checkbox value="pipe5" onChange={spawnEnemies}></Checkbox></List.Item>
             </List>
+            <Divider></Divider>
+            <Button onClick={() => {
+              unityContext.send('colorCube', 'BlueMe');
+            }}>绿色</Button>
+            <Button onClick={() => {
+              unityContext.send('colorCube', 'RedMe');
+            }}>乳白</Button>
           </Sider>
         </Layout>
-        <Footer>Footer</Footer>
+        <Footer>Powered by mendix</Footer>
       </Layout>
-    </div>
+    </div >
   );
 }
 
